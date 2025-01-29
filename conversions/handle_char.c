@@ -6,12 +6,7 @@
 /*   By: pkieszek <pkieszek@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 15:06:31 by pkieszek          #+#    #+#             */
-/*   Updated: 2025/01/29 15:09:12 by pkieszek         ###   ########.fr       */
+/*   Updated: 2025/01/29 15:17:25 by pkieszek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-void	ft_putchar_fd(char c, int fd)
-{
-	write(fd, &c, 1);
-}
