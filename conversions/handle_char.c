@@ -6,7 +6,10 @@
 /*   By: pkieszek <pkieszek@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 15:06:31 by pkieszek          #+#    #+#             */
-/*   Updated: 2025/01/29 15:17:25 by pkieszek         ###   ########.fr       */
+/*   Updated: 2025/01/29 15:23:00 by pkieszek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_printf.h"
+
+// ft_printf("Char: %c\n", 'A');
