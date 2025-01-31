@@ -6,7 +6,7 @@
 /*   By: pkieszek <pkieszek@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 15:06:31 by pkieszek          #+#    #+#             */
-/*   Updated: 2025/01/31 12:14:36 by pkieszek         ###   ########.fr       */
+/*   Updated: 2025/01/31 16:06:16 by pkieszek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,3 +15,8 @@
 */
 
 #include "ft_printf.h"
+int ft_print_char(char c)
+{
+	ft_putchar_fd(c,1);
+	return(1);
+}

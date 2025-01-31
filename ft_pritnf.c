@@ -6,11 +6,15 @@
 /*   By: pkieszek <pkieszek@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 12:39:51 by pkieszek          #+#    #+#             */
-/*   Updated: 2025/01/31 13:00:31 by pkieszek         ###   ########.fr       */
+/*   Updated: 2025/01/31 15:56:14 by pkieszek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+int check()
+{
+    
+}
 
 int	ft_printf(const char *format, ...)
 {
