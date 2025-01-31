@@ -6,12 +6,12 @@
 /*   By: pkieszek <pkieszek@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 12:27:08 by pkieszek          #+#    #+#             */
-/*   Updated: 2025/01/31 12:27:24 by pkieszek         ###   ########.fr       */
+/*   Updated: 2025/01/31 16:23:29 by pkieszek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* 
-	%u → liczba całkowita (base 10)
+	%u → liczba całkowita (base 10), unsigned integer
 */
 
 #include "ft_printf.h"
