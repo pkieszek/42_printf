@@ -1,13 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_decimal.c                                   :+:      :+:    :+:   */
+/*   handle_hex_lower.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pkieszek <pkieszek@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/29 15:20:25 by pkieszek          #+#    #+#             */
-/*   Updated: 2025/01/29 15:23:57 by pkieszek         ###   ########.fr       */
+/*   Created: 2025/01/29 15:21:16 by pkieszek          #+#    #+#             */
+/*   Updated: 2025/01/31 12:19:17 by pkieszek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-ft_printf("Decimal: %d\n", 123);
+/* 
+	%x → liczba w systemie szesnastkowym (małe litery)
+*/
+
+#include "ft_printf.h"

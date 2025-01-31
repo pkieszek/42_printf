@@ -1,13 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_string.c                                    :+:      :+:    :+:   */
+/*   handle_16_p.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pkieszek <pkieszek@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/29 15:08:49 by pkieszek          #+#    #+#             */
-/*   Updated: 2025/01/29 15:20:02 by pkieszek         ###   ########.fr       */
+/*   Created: 2025/01/31 12:29:40 by pkieszek          #+#    #+#             */
+/*   Updated: 2025/01/31 12:30:11 by pkieszek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-ft_printf("String: %s\n", "Hello");
+/* 
+	%p → wskaźnik w formacie szesnastkowym
+*/
+
+#include "ft_printf.h"
