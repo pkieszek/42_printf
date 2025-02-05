@@ -6,7 +6,7 @@
 /*   By: pkieszek <pkieszek@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 12:39:51 by pkieszek          #+#    #+#             */
-/*   Updated: 2025/02/05 17:38:59 by pkieszek         ###   ########.fr       */
+/*   Updated: 2025/02/05 17:45:24 by pkieszek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_format(va_list va, char *str, size_t *counter)
 		ft_putchar_fd(*str, counter);
 }
 
-int	ft_printf(char const *str, ...)
+int ft_printf(char const *str, ...)
 {
 	va_list		va;
 	size_t		counter;
