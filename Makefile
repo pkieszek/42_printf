@@ -6,34 +6,32 @@
 #    By: pkieszek <pkieszek@student.42warsaw.pl>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/31 12:55:17 by pkieszek          #+#    #+#              #
-#    Updated: 2025/01/31 16:08:11 by pkieszek         ###   ########.fr        #
+#    Updated: 2025/02/05 16:26:26 by pkieszek         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libftprintf.a
-LIBFT_DIR = ./42_libft
+NAME = ft_printf.a
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror
+SRCS = ft_printf.c
+OBJS = $(SRCS:.c=.o)
+LIBFT_DIR = ./libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
-SRC = ft_printf.c ft_vprintf.c ft_print_handlers.c
-OBJ = $(SRC:.c=.o)
-CC = cc
-CFLAGS = -Wall -Wextra -Werror
-AR = ar rcs
+all: $(NAME)
 
-all: $(LIBFT) $(NAME)
+$(NAME): $(OBJS) $(LIBFT)
+    ar rcs $(NAME) $(OBJS)
 
 $(LIBFT):
-	make -C $(LIBFT_DIR)
-
-$(NAME): $(OBJ)
-	$(AR) $(NAME) $(OBJ) $(LIBFT)
+    make -C $(LIBFT_DIR)
 
 clean:
-	rm -f $(OBJ)
-	make clean -C $(LIBFT_DIR)
+    rm -f $(OBJS)
+    make clean -C $(LIBFT_DIR)
 
 fclean: clean
-	rm -f $(NAME)
-	make fclean -C $(LIBFT_DIR)
+    rm -f $(NAME)
+    make fclean -C $(LIBFT_DIR)
 
 re: fclean all
