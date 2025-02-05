@@ -6,7 +6,7 @@
 #    By: pkieszek <pkieszek@student.42warsaw.pl>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/31 12:55:17 by pkieszek          #+#    #+#              #
-#    Updated: 2025/02/05 19:15:59 by pkieszek         ###   ########.fr        #
+#    Updated: 2025/02/05 19:30:55 by pkieszek         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,24 +27,30 @@ LIBFT = $(LIBFT_DIR)/libft.a
 
 .PHONY: all clean fclean re
 
+# Default target to build the library
 all: $(NAME)
 
+# Rule to compile .c files into .o object files
 %.o: %.c ft_printf.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
+# Rule to build the library
 $(NAME): $(OBJS) $(LIBFT)
-	cp $(LIBFT) $(NAME)
-	ar rcs $(NAME) $(OBJS)
+	ar rcs $(NAME) $(OBJS) $(LIBFT)
 
+# Rule to make the libft.a (located in ./libft)
 $(LIBFT):
 	make -C $(LIBFT_DIR)
 
+# Clean object files and libft.a
 clean:
 	rm -f $(OBJS)
 	make clean -C $(LIBFT_DIR)
 
+# Clean all (including the final library)
 fclean: clean
 	rm -f $(NAME)
 	make fclean -C $(LIBFT_DIR)
 
+# Rebuild everything (clean + all)
 re: fclean all
