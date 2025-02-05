@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_char.c                                      :+:      :+:    :+:   */
+/*   ft_print_char.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pkieszek <pkieszek@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 15:06:31 by pkieszek          #+#    #+#             */
-/*   Updated: 2025/01/31 16:06:16 by pkieszek         ###   ########.fr       */
+/*   Updated: 2025/02/05 19:22:20 by pkieszek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 */
 
 #include "ft_printf.h"
-int ft_print_char(char c)
+
+void	ft_print_char(char c, size_t *counter)
 {
-	ft_putchar_fd(c,1);
-	return(1);
+	ft_putchar_pf(c, counter);
 }

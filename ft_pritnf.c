@@ -6,13 +6,19 @@
 /*   By: pkieszek <pkieszek@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 12:39:51 by pkieszek          #+#    #+#             */
-/*   Updated: 2025/02/05 17:45:24 by pkieszek         ###   ########.fr       */
+/*   Updated: 2025/02/05 19:21:12 by pkieszek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_format(va_list va, char *str, size_t *counter)
+void	ft_putchar_pf(char c, size_t *counter)
+{
+	write(1, &c, 1);
+	(*counter)++;
+}
+
+static void	ft_format(va_list va, char *str, size_t *counter)
 {
 	if (*str == 'c')
 		ft_print_char(va_arg(va, int), counter);
@@ -23,17 +29,17 @@ void	ft_format(va_list va, char *str, size_t *counter)
 	else if (*str == 'i' || *str == 'd')
 		ft_print_int(va_arg(va, int), counter);
 	else if (*str == 'u')
-		ft_printf_unsigned(va_arg(va, unsigned int), counter);
+		ft_print_unsigned(va_arg(va, unsigned int), counter);
 	else if (*str == 'x' || *str == 'X')
-		ft_print_hex(va_arg(va, unsigned int), counter);
+		ft_print_hex(va_arg(va, unsigned int), counter, (*str == 'X'));
 	else if (*str == '%')
-		ft_putchar_fd(*str, counter);
+		ft_putchar_pf('%', counter);
 }
 
-int ft_printf(char const *str, ...)
+int	ft_printf(const char *str, ...)
 {
-	va_list		va;
-	size_t		counter;
+	va_list	va;
+	size_t	counter;
 
 	if (!str)
 		return (0);

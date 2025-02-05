@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_hex.c                                       :+:      :+:    :+:   */
+/*   ft_print_hex.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pkieszek <pkieszek@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 15:21:16 by pkieszek          #+#    #+#             */
-/*   Updated: 2025/01/31 16:47:20 by pkieszek         ###   ########.fr       */
+/*   Updated: 2025/02/05 19:24:23 by pkieszek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,26 @@
 
 #include "ft_printf.h"
 
-int ft_print_hex(unsigned int num, int uppercase)
+
+void	ft_print_hex(unsigned int num, size_t *counter, int uppercase)
 {
-    char str[8];
-    int i = 0;
-    char *hex = uppercase ? "0123456789ABCDEF" : "0123456789abcdef";
+	char	str[9];
+	int		i;
+	char	*hex;
 
-    if (num == 0)
-        return (write(1, "0", 1));
-
-    while (num)
-    {
-        str[i++] = hex[num % 16];
-        num /= 16;
-    }
-
-    int len = i;
-    while (i--)
-        write(1, &str[i], 1);
-
-    return (len);
+	hex = uppercase ? "0123456789ABCDEF" : "0123456789abcdef";
+	if (num == 0)
+	{
+		ft_putchar_pf('0', counter);
+		return;
+	}
+	i = 0;
+	while (num)
+	{
+		str[i++] = hex[num % 16];
+		num /= 16;
+	}
+	str[i] = '\0';
+	while (--i >= 0)
+		ft_putchar_pf(str[i], counter);
 }

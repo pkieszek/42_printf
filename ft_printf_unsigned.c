@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_unsigned_int_u.c                            :+:      :+:    :+:   */
+/*   ft_printf_unsigned.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pkieszek <pkieszek@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 12:27:08 by pkieszek          #+#    #+#             */
-/*   Updated: 2025/02/05 17:37:46 by pkieszek         ###   ########.fr       */
+/*   Updated: 2025/02/05 19:23:49 by pkieszek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,29 +16,15 @@
 
 #include "ft_printf.h"
 
-static void	printout(unsigned int nb)
+
+static void	ft_print_unsigned_recursive(unsigned int nb, size_t *counter)
 {
 	if (nb > 9)
-		print_unsigned(nb / 10);
-	if (nb <= 9)
-	{
-		ft_putchar_fd(nb + 48, 1);
-		return ;
-	}
-	ft_putchar_fd((nb % 10) + 48, 1);
+		ft_print_unsigned_recursive(nb / 10, counter);
+	ft_putchar_pf((nb % 10) + '0', counter);
 }
 
-int	print_unsigned(unsigned int nb)
+void	ft_print_unsigned(unsigned int nb, size_t *counter)
 {
-	unsigned int	i;
-
-	printout(nb);
-	i = 1;
-	while (nb > 9)
-	{
-		nb = nb / 10;
-		i++;
-	}
-	return (i);
+	ft_print_unsigned_recursive(nb, counter);
 }
-
