@@ -6,7 +6,7 @@
 /*   By: pkieszek <pkieszek@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 12:39:51 by pkieszek          #+#    #+#             */
-/*   Updated: 2025/02/05 17:00:51 by pkieszek         ###   ########.fr       */
+/*   Updated: 2025/02/05 17:38:59 by pkieszek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,19 @@
 void	ft_format(va_list va, char *str, size_t *counter)
 {
 	if (*str == 'c')
-		ft_putchar_pf(va_arg(va, int), counter);
+		ft_print_char(va_arg(va, int), counter);
 	else if (*str == 's')
-		ft_putstr_pf(va_arg(va, char *), counter);
+		ft_print_string(va_arg(va, char *), counter);
 	else if (*str == 'p')
-		ft_putptr_pf(va_arg(va, void *), counter);
+		ft_print_pointer(va_arg(va, void *), counter);
 	else if (*str == 'i' || *str == 'd')
-		ft_putnbr_pf(va_arg(va, int), counter);
+		ft_print_int(va_arg(va, int), counter);
 	else if (*str == 'u')
-		ft_putuint_pf(va_arg(va, unsigned int), counter);
+		ft_printf_unsigned(va_arg(va, unsigned int), counter);
 	else if (*str == 'x' || *str == 'X')
-	{
-		if (*str == 'x')
-			ft_puthex_pf(va_arg(va, unsigned int), counter, HEX_LOW_BASE);
-		else
-			ft_puthex_pf(va_arg(va, unsigned int), counter, HEX_UPP_BASE);
-	}
+		ft_print_hex(va_arg(va, unsigned int), counter);
 	else if (*str == '%')
-		ft_putchar_pf(*str, counter);
+		ft_putchar_fd(*str, counter);
 }
 
 int	ft_printf(char const *str, ...)

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_string.c                                    :+:      :+:    :+:   */
+/*   ft_print_string.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pkieszek <pkieszek@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 15:08:49 by pkieszek          #+#    #+#             */
-/*   Updated: 2025/01/31 16:14:39 by pkieszek         ###   ########.fr       */
+/*   Updated: 2025/02/05 17:17:58 by pkieszek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,13 @@
 
 #include "ft_printf.h"
 
-int ft_print_string(char *str)
+void	ft_print_string(char *str, size_t *counter)
 {
-    int len;
-
-    if (!str)
-        str = "(null)";
-
-    len = ft_strlen(str);
-	
-    ft_putstr_fd(str, 1);
-
-    return (len);
-} 
+	if (!str)
+		str = "(null)";
+	while (*str)
+	{
+		ft_putchar_fd(*str, counter);
+		str++;
+	}
+}

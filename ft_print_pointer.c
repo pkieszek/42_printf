@@ -6,7 +6,7 @@
 /*   By: pkieszek <pkieszek@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 12:29:40 by pkieszek          #+#    #+#             */
-/*   Updated: 2025/02/05 16:41:38 by pkieszek         ###   ########.fr       */
+/*   Updated: 2025/02/05 17:33:56 by pkieszek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void ft_print_pointer(void *ptr, int *count)
 {
     if (!ptr)
     {
-        *count += ft_putstr_fd("(nil)", 1);
+        *count += ft_putstr_fd("(null)", 1);
         return;
     }
     *count += ft_putstr_fd("0x", 1);
