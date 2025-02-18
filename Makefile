@@ -6,7 +6,7 @@
 #    By: pkieszek <pkieszek@student.42warsaw.pl>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/31 12:55:17 by pkieszek          #+#    #+#              #
-#    Updated: 2025/02/18 17:10:36 by pkieszek         ###   ########.fr        #
+#    Updated: 2025/02/18 17:45:59 by pkieszek         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,9 @@ $(NAME): $(OBJS)
 	@cp $(LIBFT) .
 	@mv libft.a $(NAME)
 	@$(AR) $(NAME) $(OBJS)
+
+%.o: %.c ft_printf.h
+	$(CC) $(CFLAGS) -I $(LIBFT_DIR) -c $< -o $@
 
 clean:
 	@$(RM) $(OBJS)
