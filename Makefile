@@ -6,7 +6,7 @@
 #    By: pkieszek <pkieszek@student.42warsaw.pl>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/31 12:55:17 by pkieszek          #+#    #+#              #
-#    Updated: 2025/02/18 17:45:59 by pkieszek         ###   ########.fr        #
+#    Updated: 2025/02/18 20:05:11 by pkieszek         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 RM = rm -f
 
-SRCS = ft_printf.c ft_print_format.c ft_print_hex.c ft_print_pointer.c
+SRCS = ft_printf.c ft_print_format.c ft_print_hex.c ft_print_pointer.c ft_print_string.c ft_print_unsigned.c ft_print_int.c
 OBJS = $(SRCS:.c=.o)
 
 LIBFT_DIR = ./libft
