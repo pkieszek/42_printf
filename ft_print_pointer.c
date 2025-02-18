@@ -6,7 +6,7 @@
 /*   By: pkieszek <pkieszek@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:24:42 by pkieszek          #+#    #+#             */
-/*   Updated: 2025/02/18 17:49:37 by pkieszek         ###   ########.fr       */
+/*   Updated: 2025/02/18 18:14:44 by pkieszek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 static void ft_puthex(unsigned long num)
 {
     char *hex = "0123456789abcdef";
-
+    
     if (num >= 16)
         ft_puthex(num / 16);
     ft_putchar_fd(hex[num % 16], 1);
@@ -27,7 +27,6 @@ static void ft_puthex(unsigned long num)
 static int ft_hexlen(unsigned long num)
 {
     int len = 1;
-
     while (num >= 16)
     {
         num /= 16;
@@ -41,12 +40,12 @@ int ft_print_pointer(void *ptr)
 {
     int len;
 
-    if (!ptr)
+    if (!ptr) // Handle NULL pointer case
         return (ft_putstr_fd("(nil)", 1), 5);
     
-    ft_putstr_fd("0x", 1);
-    len = 2; // '0x' prefix is always 2 characters long
+    ft_putstr_fd("0x", 1); // Print the '0x' prefix
     ft_puthex((unsigned long)ptr); // Print the memory address in hex
-
-    return (len + ft_hexlen((unsigned long)ptr)); // Return total length
+    len = 2 + ft_hexlen((unsigned long)ptr); // Calculate total length
+    
+    return (len);
 }

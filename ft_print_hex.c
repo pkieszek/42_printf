@@ -6,7 +6,7 @@
 /*   By: pkieszek <pkieszek@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:26:35 by pkieszek          #+#    #+#             */
-/*   Updated: 2025/02/18 17:26:45 by pkieszek         ###   ########.fr       */
+/*   Updated: 2025/02/18 18:13:15 by pkieszek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ static void ft_puthex(unsigned int num, char *base)
 /* Function to print an unsigned integer in hexadecimal format */
 int ft_print_hex(unsigned int num, char specifier)
 {
-    int len;
     char *base;
+    int len;
 
     base = (specifier == 'x') ? "0123456789abcdef" : "0123456789ABCDEF";
     ft_puthex(num, base);
