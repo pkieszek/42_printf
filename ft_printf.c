@@ -6,7 +6,7 @@
 /*   By: pkieszek <pkieszek@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 12:39:51 by pkieszek          #+#    #+#             */
-/*   Updated: 2025/02/18 17:04:24 by pkieszek         ###   ########.fr       */
+/*   Updated: 2025/02/18 17:47:31 by pkieszek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <stdarg.h> // Include stdarg.h to handle variadic functions
 
 /* Function to process the format specifier and print the appropriate argument */
-static int  ft_print_format(char specifier, va_list args)
+int  ft_print_format(char specifier, va_list args)
 {
     if (specifier == 'c') // Print a single character
         return (ft_putchar_fd(va_arg(args, int), 1), 1);
