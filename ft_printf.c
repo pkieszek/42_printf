@@ -6,7 +6,7 @@
 /*   By: pkieszek <pkieszek@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 12:39:51 by pkieszek          #+#    #+#             */
-/*   Updated: 2025/02/20 00:53:36 by pkieszek         ###   ########.fr       */
+/*   Updated: 2025/02/20 00:54:39 by pkieszek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@
  * - The total number of characters printed.  
  *
  * Example:
- * Calling `ft_printf("Hello %s, number: %d", "Alice", 42);`  
- * prints `"Hello Alice, number: 42"` and returns `22`.  
+ * Calling `ft_printf("Hello %s, number: %d", "Luigi", 42);`  
+ * prints `"Hello Luigi, number: 42"` and returns `22`.  
  */
 int	ft_printf(const char *format, ...)
 {
